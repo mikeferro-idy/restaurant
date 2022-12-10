@@ -1,0 +1,107 @@
+:root {
+    --dark: rgb(29, 29, 29);
+    --light: rgb(255, 255, 255);
+    --primary: rgb(144, 143, 143);
+
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--primary);
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    place-items: center;
+    color: var(--dark);
+}
+
+.logo {
+    grid-column: 2;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    font-weight: bold;
+}
+
+#orderBtn button {
+    background-color: var(--light);
+    color: var(--primary);
+    padding: .5rem 1rem;
+    font-size: .75rem;
+    border-color: var(--primary);
+}
+
+#orderBtn button:hover {
+    background-color: var(--primary);
+    color: var(--light);
+    cursor: pointer;
+}
+
+#nav-container ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+#nav-container li a{
+    text-decoration: none;
+    color: var(--primary);
+    font-size: .75rem;
+}
+
+#home-container {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 3fr 1fr;
+}
+
+#home-container p {
+    font-size: .9rem;
+    width: 500px;
+    text-align: center;
+}
+
+#menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu-items {
+    padding: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,2fr));
+    gap: 8px;
+}
+
+.menu-item {
+    display: grid;
+    grid-template-columns: auto 10%;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+    'name price'
+    'description .';
+    align-items: center;
+    /* box-shadow: 1px 2px 3px rgb(84, 84, 84); */
+    padding: .5rem 1rem;
+    height: 100px;
+}
+
+.item-name {
+    grid-area: name;
+    color: var(--dark);
+    font-weight: bold;
+}
+
+.item-description {
+    grid-area: description;
+    color: var(--dark);
+    font-size: .75rem;
+}
+
+.item-price {
+    grid-area: price;
+    font-size: .75rem;
+}
